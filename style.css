@@ -5,6 +5,9 @@
 
 body{
     background-color: rgb(0, 53, 0);
+    text-align: center;
+    color: aliceblue;
+    font-family: monospace;
 }
 
 
@@ -46,4 +49,8 @@ img{
 }
 .casaValida{
     background-color: aqua;
+}
+.vez{
+    
+    color: blueviolet;
 }

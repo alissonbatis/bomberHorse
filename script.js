@@ -1,12 +1,17 @@
-
-/*const cavalos = document.querySelectorAll('.cavaloImagem')*/
+let corDoCavalo = "";
+const cavalos = document.querySelectorAll('.cavaloImagem');
 const casas = document.querySelectorAll('.casa , .casaPreta');
+
+const casasComBomb = document.querySelector('.bomb');
+const textoVEZ = document.querySelector('.vez');
+
+let brancas = false;
+
 
 let posicaoCavalo = {
     x: null,
     y: null,
 };
-
 
 
 
@@ -29,19 +34,25 @@ function verificacao(){ casas.forEach(casa => {
             posicaoCavalo.x = x;
             posicaoCavalo.y = y;
         
-            console.log(`o cavalo esta ${posicaoCavalo.x} ${posicaoCavalo.y}`);
+            //console.log(`o cavalo esta ${posicaoCavalo.x} ${posicaoCavalo.y}`);
+            if (casa.classList.contains('cavaloPreto')){
+                corDoCavalo = "Preto";
+            }
+            else if(casa.classList.contains('cavaloBranco')){
+                corDoCavalo = "Branco";
+            }
+
 
             mostrarCasasDisp();
             
         
         }else if(casa.classList.contains('bomb')){
-            console.log('morreu')
+            //console.log('morreu')
 
 
 
         }else{
-            alert("clique na casa do cav")
-            console.log(x,y)
+            //console.log(x,y)
         };
 
         
@@ -73,7 +84,7 @@ function mostrarCasasDisp(){
     const posicoesValidas = posicoes.filter(posicao => 
         posicao.x >= 1 && posicao.x <= 8 && posicao.y >= 1 && posicao.y <= 8
     );
-    console.log(`posicoes Validas    ${JSON.stringify(posicoesValidas)} `)
+    //console.log(`posicoes Validas    ${JSON.stringify(posicoesValidas)} `)
 
 
 
@@ -92,7 +103,8 @@ function mostrarCasasDisp(){
     
     posicoesValidas.forEach(valida => {
         casas.forEach(casa => {
-             if (casa.getAttribute('data-x') == valida.x && casa.getAttribute('data-y') == valida.y) {
+             if (casa.getAttribute('data-x') == valida.x && casa.getAttribute('data-y') == valida.y && !casa.classList.contains('bomb') && !casa.classList.contains('comCavalo')) {
+
 
                 casa.classList.add('casaValida');
                 casa.addEventListener('click', mudarCavaloDeLugar);
@@ -104,6 +116,7 @@ function mostrarCasasDisp(){
 
 
 function mudarCavaloDeLugar(){
+    
     let casasAnteriores = {
         x: 0,
         y: 0
@@ -114,6 +127,26 @@ function mudarCavaloDeLugar(){
 
 
     }
+
+    function mudarVez() {
+        if (brancas){
+            textoVEZ.innerHTML = `<h1> Brancas </h1>`;
+        }
+        else {
+            textoVEZ.innerHTML = `<h1> Pretas </h1>`;
+        }
+        brancas = !brancas;
+    }
+
+    
+
+    
+    
+
+   
+    
+
+
 
     casasAnteriores.x = posicaoCavalo.x
     casasAnteriores.y = posicaoCavalo.y
@@ -135,11 +168,15 @@ function mudarCavaloDeLugar(){
         }
                     
     });
-   
+    
     posicaoCavalo.x = xDaCasaValida ;
     posicaoCavalo.y = yDaCasaValida; 
 
-    this.innerHTML = `<img src="img/cavalo preto.png" alt=""  class="cavaloImagem" id="cavaloBranco" >`;
+    this.innerHTML = `<img src="img/cavalo ${corDoCavalo}.png" alt=""  class="cavaloImagem" id="cavaloBranco" >`;
+
+    
+
+
 
     console.log(`'a posicao antiga do cavalo e' ${JSON.stringify(casasAnteriores)} `);
 
@@ -147,27 +184,9 @@ function mudarCavaloDeLugar(){
     
 
     this.classList.add('comCavalo');
+    this.classList.add(`cavalo${corDoCavalo}`)
+    
+    mudarVez();
     
     
 };
-    
-function bomba(){
-    
-    
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
