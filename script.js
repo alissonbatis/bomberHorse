@@ -19,7 +19,7 @@ cavalosARRAY = [cavaloPreto , cavaloBranco];
 
 
 
-casas.forEach(casa => {
+function verificacao(){ casas.forEach(casa => {
     casa.addEventListener('click', function(){
         const x = parseInt(casa.getAttribute('data-x'));
         const y = parseInt(casa.getAttribute('data-y'));
@@ -35,7 +35,7 @@ casas.forEach(casa => {
             
         
         }else if(casa.classList.contains('bomb')){
-            bomba()
+            console.log('morreu')
 
 
 
@@ -50,7 +50,9 @@ casas.forEach(casa => {
         
     })
     
-});
+});}
+
+verificacao();
 
 
 
@@ -90,7 +92,7 @@ function mostrarCasasDisp(){
     
     posicoesValidas.forEach(valida => {
         casas.forEach(casa => {
-            if (casa.getAttribute('data-x') == valida.x && casa.getAttribute('data-y') == valida.y) {
+             if (casa.getAttribute('data-x') == valida.x && casa.getAttribute('data-y') == valida.y) {
 
                 casa.classList.add('casaValida');
                 casa.addEventListener('click', mudarCavaloDeLugar);
@@ -100,10 +102,17 @@ function mostrarCasasDisp(){
 }
 
 
+
 function mudarCavaloDeLugar(){
     let casasAnteriores = {
         x: 0,
         y: 0
+    }
+    if (this.classList.contains('bomb')){
+        alert('bomba')
+        return;
+
+
     }
 
     casasAnteriores.x = posicaoCavalo.x
@@ -119,6 +128,9 @@ function mudarCavaloDeLugar(){
         if (casa.getAttribute('data-x') == casasAnteriores.x && casa.getAttribute('data-y') == casasAnteriores.y){
             casa.innerHTML = `<img src="img/bomba.png" alt="bomba" >`
             casa.classList.add('bomb');
+            casa.classList.remove('comCavalo')
+            casa.removeEventListener('click',mostrarCasasDisp)
+            
 
         }
                     
