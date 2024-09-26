@@ -1,6 +1,7 @@
 const cavalos = document.querySelectorAll(".cavaloImagem");
 const casas = document.querySelectorAll(".casa , .casaPreta");
 const textoVEZ = document.querySelector(".vez");
+const som = document.querySelector('#som')
 
 let brancas = true;
 let corDoCavalo = "";
@@ -133,7 +134,7 @@ function mudarCavaloDeLugar() {
 
   // Pra a casa valida clicada ele faz isso ==
   this.innerHTML = `<img src="img/cavalo ${corDoCavalo}.png" alt=""  class="cavaloImagem" id="cavalo${corDoCavalo}" >`;
-
+  som.play();
   this.classList.add("comCavalo");
   this.classList.add(`cavalo${corDoCavalo}`);
 

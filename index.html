@@ -7,95 +7,111 @@
     <title>HorseBomb</title>
 </head>
 <body>
-    <div class="tabuleiro">
-
-
-        <div class="casa comCavalo cavaloPreto" data-x = "1" data-y="1">
-            <img src="img/cavalo preto.png" alt=""  class="cavaloImagem" >
-        </div>
-        <div class="casaPreta comCavalo" data-x = "2" data-y="1"></div>
-        <div class="casa" data-x = "3" data-y="1"></div>
-        <div class="casaPreta" data-x = "4" data-y="1"></div>
-        <div class="casa" data-x = "5" data-y="1"></div>
-        <div class="casaPreta" data-x = "6" data-y="1"></div>
-        <div class="casa" data-x = "7" data-y="1"></div>
-        <div class="casaPreta" data-x = "8" data-y="1"></div>
-
-        <div class="casaPreta" data-x = "1" data-y="2"></div>
-        <div class="casa" data-x = "2" data-y="2"></div>
-        <div class="casaPreta" data-x = "3" data-y="2"></div>
-        <div class="casa" data-x = "4" data-y="2"></div>
-        <div class="casaPreta" data-x = "5" data-y="2"></div>
-        <div class="casa" data-x = "6" data-y="2"></div>
-        <div class="casaPreta" data-x = "7" data-y="2"></div>
-        <div class="casa" data-x = "8" data-y="2"></div>
-
-        <div class="casa" data-x = "1" data-y="3"></div>
-        <div class="casaPreta" data-x = "2" data-y="3"></div>
-        <div class="casa" data-x = "3" data-y="3"></div>
-        <div class="casaPreta" data-x = "4" data-y="3"></div>
-        <div class="casa" data-x = "5" data-y="3"></div>
-        <div class="casaPreta" data-x = "6" data-y="3"></div>
-        <div class="casa" data-x = "7" data-y="3"></div>
-        <div class="casaPreta" data-x = "8" data-y="3"></div>
-
-        <div class="casaPreta" data-x = "1" data-y="4"></div>
-        <div class="casa" data-x = "2" data-y="4"></div>
-        <div class="casaPreta" data-x = "3" data-y="4"></div>
-        <div class="casa" data-x = "4" data-y="4"></div>
-        <div class="casaPreta" data-x = "5" data-y="4"></div>
-        <div class="casa" data-x = "6" data-y="4"></div>
-        <div class="casaPreta" data-x = "7" data-y="4"></div>
-        <div class="casa" data-x = "8" data-y="4"></div>
-
-        <div class="casa" data-x = "1" data-y="5"></div>
-        <div class="casaPreta" data-x = "2" data-y="5"></div>
-        <div class="casa" data-x = "3" data-y="5"></div>
-        <div class="casaPreta" data-x = "4" data-y="5"></div>
-        <div class="casa" data-x = "5" data-y="5"></div>
-        <div class="casaPreta" data-x = "6" data-y="5"></div>
-        <div class="casa" data-x = "7" data-y="5"></div>
-        <div class="casaPreta" data-x = "8" data-y="5"></div>
-
-        <div class="casaPreta" data-x = "1" data-y="6"></div>
-        <div class="casa" data-x = "2" data-y="6"></div>
-        <div class="casaPreta" data-x = "3" data-y="6"></div>
-        <div class="casa" data-x = "4" data-y="6"></div>
-        <div class="casaPreta" data-x = "5" data-y="6"></div>
-        <div class="casa" data-x = "6" data-y="6"></div>
-        <div class="casaPreta" data-x = "7" data-y="6"></div>
-        <div class="casa" data-x = "8" data-y="6"></div>
-
-        <div class="casa" data-x = "1" data-y="7"></div>
-        <div class="casaPreta" data-x = "2" data-y="7"></div>
-        <div class="casa" data-x = "3" data-y="7"></div>
-        <div class="casaPreta" data-x = "4" data-y="7"></div>
-        <div class="casa" data-x = "5" data-y="7"></div>
-        <div class="casaPreta" data-x = "6" data-y="7"></div>
-        <div class="casa" data-x = "7" data-y="7"></div>
-        <div class="casaPreta" data-x = "8" data-y="7"></div>
-
-        <div class="casaPreta" data-x = "1" data-y="8"></div>
-        <div class="casa" data-x = "2" data-y="8"></div>
-        <div class="casaPreta" data-x = "3" data-y="8"></div>
-        <div class="casa" data-x = "4" data-y="8"></div>
-        <div class="casaPreta" data-x = "5" data-y="8"></div>
-        <div class="casa" data-x = "6" data-y="8"></div>
-        <div class="casaPreta" data-x = "7" data-y="8"></div>
-        <div class="casa comCavalo cavaloBranco" data-x = "8" data-y="8">
-            <img src="img/cavalo branco.png" alt="" class="cavaloImagem">
-        </div>
-
+    
+    <main>
         
+        <section class="conteudo"> 
+            <h1>Bem Vindo ao BombHorse!</h1>
 
-        
-    </div>
-    <div> 
-        <h1> Vez:</h1>
-        <div class="vez">
-            <h1>Brancas</h1>
+            <div class="botoes">
+                <button id="botaoJogar">JOGAR</button>
+                <button id="botaoJogarComBots">JOGAR COM BOTS</button>
+            </div>
+            <form action="">
+
+                <div>
+                    <label for="jogartcomamigos">Jogar com amigos:</label>
+                    <input type="url">
+                </div>
+
+
+                <div>
+                    <label for="cor">Cor que deseja jogar:</label>
+                    <input type="color" id="inputDaCor">
+                </div>
+                
+            </form>
+        </section>
+
+        <div class="tabuleiro">
+            <audio src="sound/506053__mellau__button-click-2.wav" id="som"></audio>
+            <div class="casa comCavalo cavaloPreto" data-x = "1" data-y="1">
+                <img src="img/cavalo preto.png" alt=""  class="cavaloImagem" >
+            </div>
+            <div class="casaPreta comCavalo" data-x = "2" data-y="1"></div>
+            <div class="casa" data-x = "3" data-y="1"></div>
+            <div class="casaPreta" data-x = "4" data-y="1"></div>
+            <div class="casa" data-x = "5" data-y="1"></div>
+            <div class="casaPreta" data-x = "6" data-y="1"></div>
+            <div class="casa" data-x = "7" data-y="1"></div>
+            <div class="casaPreta" data-x = "8" data-y="1"></div>
+            <div class="casaPreta" data-x = "1" data-y="2"></div>
+            <div class="casa" data-x = "2" data-y="2"></div>
+            <div class="casaPreta" data-x = "3" data-y="2"></div>
+            <div class="casa" data-x = "4" data-y="2"></div>
+            <div class="casaPreta" data-x = "5" data-y="2"></div>
+            <div class="casa" data-x = "6" data-y="2"></div>
+            <div class="casaPreta" data-x = "7" data-y="2"></div>
+            <div class="casa" data-x = "8" data-y="2"></div>
+            <div class="casa" data-x = "1" data-y="3"></div>
+            <div class="casaPreta" data-x = "2" data-y="3"></div>
+            <div class="casa" data-x = "3" data-y="3"></div>
+            <div class="casaPreta" data-x = "4" data-y="3"></div>
+            <div class="casa" data-x = "5" data-y="3"></div>
+            <div class="casaPreta" data-x = "6" data-y="3"></div>
+            <div class="casa" data-x = "7" data-y="3"></div>
+            <div class="casaPreta" data-x = "8" data-y="3"></div>
+            <div class="casaPreta" data-x = "1" data-y="4"></div>
+            <div class="casa" data-x = "2" data-y="4"></div>
+            <div class="casaPreta" data-x = "3" data-y="4"></div>
+            <div class="casa" data-x = "4" data-y="4"></div>
+            <div class="casaPreta" data-x = "5" data-y="4"></div>
+            <div class="casa" data-x = "6" data-y="4"></div>
+            <div class="casaPreta" data-x = "7" data-y="4"></div>
+            <div class="casa" data-x = "8" data-y="4"></div>
+            <div class="casa" data-x = "1" data-y="5"></div>
+            <div class="casaPreta" data-x = "2" data-y="5"></div>
+            <div class="casa" data-x = "3" data-y="5"></div>
+            <div class="casaPreta" data-x = "4" data-y="5"></div>
+            <div class="casa" data-x = "5" data-y="5"></div>
+            <div class="casaPreta" data-x = "6" data-y="5"></div>
+            <div class="casa" data-x = "7" data-y="5"></div>
+            <div class="casaPreta" data-x = "8" data-y="5"></div>
+            <div class="casaPreta" data-x = "1" data-y="6"></div>
+            <div class="casa" data-x = "2" data-y="6"></div>
+            <div class="casaPreta" data-x = "3" data-y="6"></div>
+            <div class="casa" data-x = "4" data-y="6"></div>
+            <div class="casaPreta" data-x = "5" data-y="6"></div>
+            <div class="casa" data-x = "6" data-y="6"></div>
+            <div class="casaPreta" data-x = "7" data-y="6"></div>
+            <div class="casa" data-x = "8" data-y="6"></div>
+            <div class="casa" data-x = "1" data-y="7"></div>
+            <div class="casaPreta" data-x = "2" data-y="7"></div>
+            <div class="casa" data-x = "3" data-y="7"></div>
+            <div class="casaPreta" data-x = "4" data-y="7"></div>
+            <div class="casa" data-x = "5" data-y="7"></div>
+            <div class="casaPreta" data-x = "6" data-y="7"></div>
+            <div class="casa" data-x = "7" data-y="7"></div>
+            <div class="casaPreta" data-x = "8" data-y="7"></div>
+            <div class="casaPreta" data-x = "1" data-y="8"></div>
+            <div class="casa" data-x = "2" data-y="8"></div>
+            <div class="casaPreta" data-x = "3" data-y="8"></div>
+            <div class="casa" data-x = "4" data-y="8"></div>
+            <div class="casaPreta" data-x = "5" data-y="8"></div>
+            <div class="casa" data-x = "6" data-y="8"></div>
+            <div class="casaPreta" data-x = "7" data-y="8"></div>
+            <div class="casa comCavalo cavaloBranco" data-x = "8" data-y="8">
+                <img src="img/cavalo branco.png" alt="" class="cavaloImagem">
+            </div>
         </div>
-    </div>
+
+        <div class="divDaVez">
+            <h1> Vez:</h1>
+                <div class="vez">
+                    <h1>Brancas</h1>
+                </div>
+        </div>
+    </main>
 </body>
 <script src="script.js"></script>
 </html>

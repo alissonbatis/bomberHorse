@@ -2,14 +2,95 @@
     margin: 0;
     padding: 0;
 }
-
+/*  CORES
+    #0e0925
+*/
 body{
-    background-color: rgb(0, 53, 0);
+    background-color: #1d1a2a;
     text-align: center;
     color: aliceblue;
     font-family: monospace;
 }
+main{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+.conteudo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    background-color: rgb(43, 37, 66);
+}
+.conteudo h1 {
+    padding: 20px;
+    margin-bottom:30px ;
+    font-size: 25px;
+}
+#botaoJogar , #botaoJogarComBots{ 
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    background-color: #564c80;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 0px rgb(22, 16, 27);
+    border-radius: 2px;
+}
 
+#botaoJogar{
+    width: 100px;
+    height: 50px;
+}
+#botaoJogarComBots{
+    width: 150px;
+    height: 50px;
+}
+.botoes{
+    width: 300px;
+    margin-left:50px ;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+
+}
+
+.divDaVez{
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+}
+#inputDaCor{
+    height: 30px;
+    width: 30px;
+
+
+}
+form{
+    margin-left: 46px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+form div {
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
 
 .tabuleiro{
     overflow: hidden;
