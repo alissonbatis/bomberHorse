@@ -8,42 +8,53 @@ let corDoCavalo = "";
 let cavaloAtivo = null;
 let casasComBomb = [];
 
+let PlayOn = false;
+
 let posicaoCavalo = {
   x: null,
   y: null,
 };
 
-cavaloPreto = document.getElementById("cavaloPreto");
-cavaloBranco = document.getElementById("cavaloBranco");
-cavalosARRAY = [cavaloPreto, cavaloBranco];
 
-casas.forEach((casa) => {
-  casa.addEventListener("click", function () {
-    const x = parseInt(casa.getAttribute("data-x"));
-    const y = parseInt(casa.getAttribute("data-y"));
 
-    if (casa.classList.contains("comCavalo") && cavaloAtivo == null) {
-      posicaoCavalo.x = x;
-      posicaoCavalo.y = y;
+const botaoplaylocal = document.querySelector('#botaoJogar');
+botaoplaylocal.addEventListener('click', gamePlay);
 
-      //console.log(`o cavalo esta ${posicaoCavalo.x} ${posicaoCavalo.y}`);
-      if (casa.classList.contains("cavaloPreto") && brancas == false) {
-        corDoCavalo = "Preto";
-        cavaloAtivo = casa;
-        mostrarCasasDisp();
-      } else if (casa.classList.contains("cavaloBranco") && brancas == true) {
-        corDoCavalo = "Branco";
-        cavaloAtivo = casa;
-        mostrarCasasDisp();
+function gamePlay(){
+  const divDaVez = document.querySelector('.divDaVez');
+  PlayOn = true;
+  divDaVez.style.display = 'block';
+
+  casas.forEach((casa) => {
+    casa.addEventListener("click", function () {
+      const x = parseInt(casa.getAttribute("data-x"));
+      const y = parseInt(casa.getAttribute("data-y"));
+  
+      if (casa.classList.contains("comCavalo") && cavaloAtivo == null) {
+        posicaoCavalo.x = x;
+        posicaoCavalo.y = y;
+  
+        //console.log(`o cavalo esta ${posicaoCavalo.x} ${posicaoCavalo.y}`);
+        if (casa.classList.contains("cavaloPreto") && brancas == false) {
+          corDoCavalo = "Preto";
+          cavaloAtivo = casa;
+          mostrarCasasDisp();
+        } else if (casa.classList.contains("cavaloBranco") && brancas == true) {
+          corDoCavalo = "Branco";
+          cavaloAtivo = casa;
+          mostrarCasasDisp();
+        } else {
+        }
+      } else if (casa.classList.contains("bomb")) {
+        //console.log('morreu')
       } else {
+        //console.log(x,y)
       }
-    } else if (casa.classList.contains("bomb")) {
-      //console.log('morreu')
-    } else {
-      //console.log(x,y)
-    }
+    });
   });
-});
+}
+
+
 
 function mostrarCasasDisp() {
   const posicoes = [
@@ -151,4 +162,32 @@ function mudarCavaloDeLugar() {
 function mudarVez() {
   brancas = !brancas;
   textoVEZ.innerHTML = `<h1>${brancas ? "Brancas" : "Pretas"}</h1>`;
+}
+
+function corEscolhidaPreto(){
+  console.log('botao preto clicado')
+  if(casas[casas.length -1].classList.contains('cavaloBranco')){
+  casas[casas.length -1].classList.remove('cavaloBranco');
+  casas[casas.length -1].classList.add('cavaloPreto');
+  casas[casas.length -1].innerHTML = `<img src="img/cavalo Preto.png" alt=""  class="cavaloImagem" id="cavaloPreto">`;
+
+
+  casas[0].classList.remove('cavaloPreto');
+  casas[0].classList.add('cavaloBranco');
+  casas[0].innerHTML = `<img src="img/cavalo Branco.png" alt=""  class="cavaloImagem" id="cavaloBranco">`;
+
+  }
+
+}
+function corEscolhidaBranco(){
+  if (casas[casas.length -1].classList.contains('cavaloPreto')){
+    casas[casas.length -1].classList.remove('cavaloPreto');
+    casas[casas.length -1].classList.add('cavaloBranco');
+    casas[casas.length -1].innerHTML = `<img src="img/cavalo Branco.png" alt=""  class="cavaloImagem" id="cavaloBranco">`;
+
+    casas[0].classList.remove('cavaloBranco');
+    casas[0].classList.add('cavaloPreto');
+    casas[0].innerHTML = `<img src="img/cavalo Preto.png" alt=""  class="cavaloImagem" id="cavaloPreto">`;
+  }
+
 }

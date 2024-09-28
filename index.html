@@ -14,10 +14,10 @@
             <h1>Bem Vindo ao BombHorse!</h1>
 
             <div class="botoes">
-                <button id="botaoJogar">JOGAR</button>
+                <button id="botaoJogar">JOGAR LOCAL</button>
                 <button id="botaoJogarComBots">JOGAR COM BOTS</button>
             </div>
-            <form action="">
+            <div class="formulario">
 
                 <div>
                     <label for="jogartcomamigos">Jogar com amigos:</label>
@@ -25,16 +25,19 @@
                 </div>
 
 
-                <div>
-                    <label for="cor">Cor que deseja jogar:</label>
-                    <input type="color" id="inputDaCor">
+                <div class="divQmudaAsCores">
+                    <p>Cor que deseja jogar:</p>
+                    <button id="corEscolhidaBranco" onclick="corEscolhidaBranco()"></button>
+                    <button id="corEscolhidaPreto" onclick="corEscolhidaPreto()"></button>
+                    
                 </div>
                 
-            </form>
+            </div>
         </section>
 
+        <audio src="sound/506053__mellau__button-click-2.wav" id="som"></audio>
+
         <div class="tabuleiro">
-            <audio src="sound/506053__mellau__button-click-2.wav" id="som"></audio>
             <div class="casa comCavalo cavaloPreto" data-x = "1" data-y="1">
                 <img src="img/cavalo preto.png" alt=""  class="cavaloImagem" >
             </div>
