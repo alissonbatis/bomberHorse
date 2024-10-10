@@ -5,6 +5,9 @@
 /*  CORES
     #0e0925
 */
+.hidden{
+    display: none;
+}
 body{
     background-color: #1d1a2a;
     text-align: center;
@@ -13,6 +16,7 @@ body{
 }
 main{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     position: relative;
     width: 100%;
@@ -36,27 +40,31 @@ main{
 #botaoJogar , #botaoJogarComBots{ 
     font-weight: bold;
     padding: 10px;
-    border: none;
     background-color: #564c80;
     color: white;
     font-family: monospace;
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0px 4px 0px rgb(22, 16, 27);
+    box-shadow: 1px 1px 0px rgb(22, 16, 27);
     border-radius: 2px;
 }
-
+button.botao{
+    transition: transform 0.3s ease;
+}
+button.descer{
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0px rgb(22, 16, 27);
+}
 #botaoJogar{
-    width: 120px;
+    width: 130px;
     height: 50px;
 }
 #botaoJogarComBots{
     width: 150px;
     height: 50px;
 }
-.botoes{
+.divDosBotoes{
     width: 300px;
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -122,6 +130,7 @@ form div {
 }
 
 .tabuleiro{
+    position: relative;
     overflow: hidden;
     margin: auto;
     background-color: black;
@@ -130,6 +139,22 @@ form div {
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
+}
+.displayDoGanhador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 0px #580092;
+    border-radius: 8px;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color:#564c80;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
 }
 .casa{
     display: flex;
@@ -160,8 +185,20 @@ img{
     
 }
 .casaValida{
-    background-color: aqua;
     cursor: pointer;
+    position: relative;
+}
+.casaValida::after{
+    content: ""; /* Necessário para o pseudo-elemento ser exibido */
+    width: 30px;
+    height: 30px;
+    background-color: rgb(145, 145, 145); /* Adiciona cor de fundo */
+    border-radius: 50%; /* Faz um círculo */
+    position: absolute; /* Para posicionar o círculo */
+    top: 50%; /* Ajuste a posição vertical */
+    left: 50%; /* Ajuste a posição horizontal */
+    transform: translate(-50%, -50%); /* Centraliza o círculo */
+    
 }
 .vez{
     

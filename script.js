@@ -1,7 +1,9 @@
 const cavalos = document.querySelectorAll(".cavaloImagem");
 const casas = document.querySelectorAll(".casa , .casaPreta");
 const textoVEZ = document.querySelector(".vez");
-const som = document.querySelector('#som')
+const somDoCavalo = document.querySelector('#som')
+const somDePlay = document.querySelector('#somDePlay')
+const displayDoGanhador = document.querySelector('.displayDoGanhador');
 
 let brancas = true;
 let corDoCavalo = "";
@@ -21,6 +23,7 @@ const botaoplaylocal = document.querySelector('#botaoJogar');
 botaoplaylocal.addEventListener('click', gamePlay);
 
 function gamePlay(){
+  somDePlay.play();
   const divDaVez = document.querySelector('.divDaVez');
   PlayOn = true;
   divDaVez.style.display = 'block';
@@ -38,11 +41,11 @@ function gamePlay(){
         if (casa.classList.contains("cavaloPreto") && brancas == false) {
           corDoCavalo = "Preto";
           cavaloAtivo = casa;
-          mostrarCasasDisp();
+          mostrarCasasDisp(verificarPosicoes());
         } else if (casa.classList.contains("cavaloBranco") && brancas == true) {
           corDoCavalo = "Branco";
           cavaloAtivo = casa;
-          mostrarCasasDisp();
+          mostrarCasasDisp(verificarPosicoes());
         } else {
         }
       } else if (casa.classList.contains("bomb")) {
@@ -54,9 +57,7 @@ function gamePlay(){
   });
 }
 
-
-
-function mostrarCasasDisp() {
+function verificarPosicoes(){
   const posicoes = [
     { x: posicaoCavalo.x - 1, y: posicaoCavalo.y + 2 },
     { x: posicaoCavalo.x + 1, y: posicaoCavalo.y + 2 },
@@ -78,15 +79,18 @@ function mostrarCasasDisp() {
         (casacbomb) => posicao.x === casacbomb.x && posicao.y === casacbomb.y
       )
   );
-  console.log(`posicoes Validas    ${JSON.stringify(posicoesValidas)} `);
+  console.log(`posicoes Validas  ${JSON.stringify(posicoesValidas)} `);
 
-  if (posicoesValidas.length === 0) {
-    alert(
-      `${corDoCavalo == "Branco" ? "As Pretas Vencem" : "As Brancas Vencem"}`
-    );
-    return;
-  }
+  
+  return posicoesValidas;
+};
 
+
+
+
+function mostrarCasasDisp(posicoesValidas) {
+  
+  //limpa as casas validas
   casas.forEach((casa) => {
     casa.classList.remove("casaValida");
     casa.removeEventListener("click", mudarCavaloDeLugar);
@@ -106,6 +110,25 @@ function mostrarCasasDisp() {
     });
   });
 }
+
+
+
+function verificarSeVenceu(posicoesValidas){
+  if (posicoesValidas.length === 0) {
+    displayDoGanhador.classList.remove("hidden");
+
+    displayDoGanhador.innerHTML = `<h1>${corDoCavalo == "Branco" ? "As Pretas Vencem" : "As Brancas Vencem"} </h1>`;
+
+    alert(`${corDoCavalo == "Branco" ? "As Pretas Vencem!" : "As Brancas Vencem!"}`)
+
+    return;
+  }
+}
+
+
+
+
+
 
 function mudarCavaloDeLugar() {
   let casasAnteriores = {
@@ -145,7 +168,7 @@ function mudarCavaloDeLugar() {
 
   // Pra a casa valida clicada ele faz isso ==
   this.innerHTML = `<img src="img/cavalo ${corDoCavalo}.png" alt=""  class="cavaloImagem" id="cavalo${corDoCavalo}" >`;
-  som.play();
+  somDoCavalo.play();
   this.classList.add("comCavalo");
   this.classList.add(`cavalo${corDoCavalo}`);
 
@@ -157,7 +180,12 @@ function mudarCavaloDeLugar() {
   mudarVez();
   cavaloAtivo = null;
   console.log(casasComBomb);
+
+  const proxPosicoes = verificarPosicoes();
+  verificarSeVenceu(proxPosicoes);
+  
 }
+
 
 function mudarVez() {
   brancas = !brancas;

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
     <title>HorseBomb</title>
 </head>
 <body>
@@ -13,9 +14,9 @@
         <section class="conteudo"> 
             <h1>Bem Vindo ao BombHorse!</h1>
 
-            <div class="botoes">
-                <button id="botaoJogar">JOGAR LOCAL</button>
-                <button id="botaoJogarComBots">JOGAR COM BOTS</button>
+            <div class="divDosBotoes">
+                <button id="botaoJogar" class="botao">JOGAR LOCAL</button>
+                <button id="botaoJogarComBots" class="botao">JOGAR COM BOTS</button>
             </div>
             <div class="formulario">
 
@@ -36,6 +37,7 @@
         </section>
 
         <audio src="sound/506053__mellau__button-click-2.wav" id="som"></audio>
+        <audio src="sound/sfx-pop.mp3" id="somDePlay"></audio>
 
         <div class="tabuleiro">
             <div class="casa comCavalo cavaloPreto" data-x = "1" data-y="1">
@@ -105,6 +107,10 @@
             <div class="casaPreta" data-x = "7" data-y="8"></div>
             <div class="casa comCavalo cavaloBranco" data-x = "8" data-y="8">
                 <img src="img/cavalo branco.png" alt="" class="cavaloImagem">
+            </div>
+            <div class="displayDoGanhador">
+                <h1>As brancas vencem</h1>
+                
             </div>
         </div>
 
