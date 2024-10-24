@@ -9,7 +9,7 @@
     display: none;
 }
 body{
-    background-color: #1d1a2a;
+    background-color: #262630;
     text-align: center;
     color: aliceblue;
     font-family: monospace;
@@ -141,14 +141,13 @@ form div {
     border-radius: 5px;
 }
 .displayDoGanhador{
-    display: flex;
-    justify-content: center;
+    padding-top: 70px;
     align-items: center;
     box-shadow: 5px 5px 0px #580092;
     border-radius: 8px;
     position: absolute;
     width: 300px;
-    height: 200px;
+    height: 100px;
     background-color:#564c80;
     left: 50%;
     top: 50%;

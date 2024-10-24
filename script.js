@@ -115,6 +115,7 @@ function mostrarCasasDisp(posicoesValidas) {
 
 function verificarSeVenceu(posicoesValidas){
   if (posicoesValidas.length === 0) {
+    alert('venceu');
     displayDoGanhador.classList.remove("hidden");
 
     displayDoGanhador.innerHTML = `<h1>${corDoCavalo == "Branco" ? "As Pretas Vencem" : "As Brancas Vencem"} </h1>`;
