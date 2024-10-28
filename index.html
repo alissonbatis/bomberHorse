@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <title>HorseBomb</title>
 </head>
 <body>
@@ -17,23 +18,15 @@
             <div class="divDosBotoes">
                 <button id="botaoJogar" class="botao">JOGAR LOCAL</button>
                 <button id="botaoJogarComBots" class="botao">JOGAR COM BOTS</button>
+                <button id="botaoJogarComAmigos" class="botao">JOGAR COM AMIGOS</button>
+                <button id="botaoRank">
+                    <i class="fa-solid fa-trophy"></i>
+                </button>
+                <button id="botaoHistory">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </button>
             </div>
-            <div class="formulario">
-
-                <div>
-                    <label for="jogartcomamigos">Jogar com amigos:</label>
-                    <input type="url">
-                </div>
-
-
-                <div class="divQmudaAsCores">
-                    <p>Cor que deseja jogar:</p>
-                    <button id="corEscolhidaBranco" onclick="corEscolhidaBranco()"></button>
-                    <button id="corEscolhidaPreto" onclick="corEscolhidaPreto()"></button>
-                    
-                </div>
-                
-            </div>
+            
         </section>
 
         <audio src="sound/506053__mellau__button-click-2.wav" id="som"></audio>
@@ -109,7 +102,7 @@
                 <img src="img/cavalo branco.png" alt="" class="cavaloImagem">
             </div>
             <div class="displayDoGanhador hidden">
-                <h1>As brancas vencem</h1>
+                
             </div>
         </div>
 
@@ -120,6 +113,54 @@
                 </div>
         </div>
     </main>
+
+
+    <div class="configuracoes">
+        <button id="botaoPerfil">
+            <i class="fa-solid fa-user"></i>
+        </button>
+        <button id="botaoConfig">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+    </div>
+
+    <div class="hidden" id="overlay"></div>
+
+    <div class="hidden" id="blocoPerfil">
+
+        <div id="iconUser"></div>
+
+        <div id="blocoDoNick">
+            <div>
+                <h1 id="nickUser">alisson</h1>
+            </div>
+
+            
+        </div>
+
+
+        <button class= "" id="botaoMudarNick">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+
+
+        <div class = "hidden" id="botoesDeMudancaDeNick">
+            <button id="botaoSaveNick">
+                <i class="fa-solid fa-floppy-disk" style="color: #ffffff;"></i>
+            </button>
+            <button id="botaoRestaurarNick">
+                <i class="fa-solid fa-backward" style="color: #ffffff;"></i>
+            </button>
+        </div>
+
+        <div id="infoUser"></div>
+
+
+    </div>
+
+    
 </body>
-<script src="script.js"></script>
+<script src="scriptGame.js"></script>
+<script src="funcionalidades.js"></script>
 </html>
