@@ -1,0 +1,47 @@
+
+
+.navbar{
+    background-color: #775EDB;
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.divButtons{
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    margin-right: 20px;
+}
+.perfilButton{
+    border: none;
+    border-radius: 50%;
+    
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    transition: 0.3s;
+    
+}
+
+.perfilButton:hover{
+    background-color: #623BFF;;
+}
+
+.logonav{
+    width: 40px;
+}
+img{
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+}
