@@ -13,7 +13,16 @@ function Home (){
                         Jogar local
                     </button>
                     <button>
-                        jogar Online
+                        Jogar Online
+                    </button>
+                    <button>
+                        Ranking
+                    </button>
+                    <button>
+                        Temas
+                    </button>
+                    <button>
+                        Amigos
                     </button>
                 </div>
 
