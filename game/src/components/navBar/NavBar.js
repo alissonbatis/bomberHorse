@@ -1,8 +1,9 @@
 import styles from "./NavBar.module.css"
-import {FaUser} from 'react-icons/fa'
-import { FaGear } from "react-icons/fa6";
 import Logo from '../../img/LogoPNG.png'
-
+import {
+  Settings,
+  User
+} from "lucide-react";
 
 function NavBar (){
     return(
@@ -12,10 +13,10 @@ function NavBar (){
             </div>
             <div className={styles.divButtons}>
                 <button className={styles.perfilButton}>
-                    <FaUser/>
+                    <User/>
                 </button>
                 <button className={styles.perfilButton}>
-                    <FaGear />
+                    <Settings />
                 </button>
             </div>
             

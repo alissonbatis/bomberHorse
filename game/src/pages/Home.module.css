@@ -6,6 +6,9 @@
   display: flex;
   justify-content: space-around;
 }
+.logoText {
+  color: var(--primary);
+}
 p {
   color: var(--text-secondary);
 }
@@ -81,4 +84,13 @@ p {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.icRx {
+  color: var(--primary);
+}
+
+button span {
+  display: flex;
+  align-items: center;
 }
