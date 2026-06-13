@@ -1,47 +1,84 @@
-.blocoHome{
-    color: white;
-    padding: 50px;
-    background-color: #363342;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+.blocoHome {
+  color: var(--text);
+  padding: 50px;
+  background-color: var(--background);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
-.blocoHome h1{
-    margin-bottom: 40px;
+p {
+  color: var(--text-secondary);
 }
-.menu{
-    display: flex;
-    flex-direction: column;
-    max-width: 620px;
-    height: 450px;
-    margin: auto;
-    margin-top: 50px;
+.blocoHome h1 {
+  margin-bottom: 40px;
 }
 
-.menu button{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    height: 60px;
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.4);
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 25px;
-    font-weight: 600;
-    transition: 0.3s;
-    /*box-shadow: 0px 4px 12px rgba(0,0,0,0.3);*/
-    color: #7c5cff;
-    background-color: #171422;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.menu button:hover {
-    background-color: #7c5cff;
-    color: black;
-    transform: translateY(-3px)
+.menu {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 50px;
+  height: 50%;
 }
 
-.menu button:active {
-    transform: scale(1.1);
+.primaryButton {
+  background: linear-gradient(135deg, var(--primary), #7048ff);
+
+  color: white;
+
+  padding: 20px 24px;
+
+  border-radius: var(--radius-md);
+
+  font-weight: 600;
+
+  font-size: 20px;
+
+  text-align: left;
+
+  transition: all 0.25s ease;
+
+  box-shadow: var(--shadow-md);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.secondaryButton {
+  background-color: var(--surface);
+
+  color: var(--text);
+
+  font-size: 20px;
+
+  text-align: left;
+
+  border: 1px solid var(--border);
+
+  padding: 20px 24px;
+
+  border-radius: var(--radius-md);
+
+  transition: 0.25s;
+}
+
+.secondaryButton:hover {
+  background-color: var(--surface-hover);
+}
+
+.primaryButton,
+.secondaryButton {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }

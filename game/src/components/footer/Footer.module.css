@@ -1,4 +1,32 @@
 .footer{
-    background-color: #363342;
-    padding: 100px;
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.mnfooter{
+    min-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: #1b1a22;
+}
+li{
+    list-style: none;
+    color: var(--list-footer);
+    
+}
+li :hover{
+    color: #000000;
+}
+a {
+    color: inherit;
+    text-decoration: none;
 }

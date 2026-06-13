@@ -4,10 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Imports paginas
 import Home from "./pages/Home";
 import Game from "./pages/Game";
-import Contato from "./pages/Contato";
+import Desenvolvedores from "./pages/Desenvolvedores";
 import Sobre from "./pages/Sobre";
-
-import Footer from "./components/footer/Footer";
 import NavBar from "./components/navBar/NavBar";
 
 
@@ -21,10 +19,9 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/game" element={<Game/>} />
             <Route path="/sobre" element={<Sobre/>} />
-            <Route path="/contato" element={<Contato/>} />
+            <Route path="/devs" element={<Desenvolvedores/>} />
           </Routes>
         </main>
-        <Footer/>
       </div>
     </BrowserRouter>
   );

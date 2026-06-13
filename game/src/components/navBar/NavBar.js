@@ -4,8 +4,6 @@ import { FaGear } from "react-icons/fa6";
 import Logo from '../../img/LogoPNG.png'
 
 
-
-
 function NavBar (){
     return(
         <div className= {styles.navbar}>

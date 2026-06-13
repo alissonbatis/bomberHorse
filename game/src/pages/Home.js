@@ -1,34 +1,53 @@
 import styles from "./Home.module.css"
-import Tabuleiro from "../components/tabuleiro/Tabuleiro"
+import '../index.css';
+import Footer from "../components/footer/Footer";
+import {
+  FaPlay,
+  FaUsers,
+  FaTrophy,
+  FaPalette,
+  FaUserFriends
+} from "react-icons/fa";
+import PainelGame from "../components/painelGame/PainelGame";
 
 function Home (){
     return(
         <div className= {styles.blocoHome}>
-            <div>
-                <h1>Bem-Vindo ao BombHorse</h1>
-                <p>Projeto de um Jogo que funde regras de Xadrez com a dinâminca do BomberMan</p>
+            <div className= {styles.container}>
+                <div>
+                    <h1>Bem-Vindo ao BombHorse</h1>
+                    <p>Projeto de um Jogo que funde regras de Xadrez com a dinâminca do BomberMan</p>
 
-                <div className={styles.menu}>
-                    <button>
-                        Jogar local
-                    </button>
-                    <button>
-                        Jogar Online
-                    </button>
-                    <button>
-                        Ranking
-                    </button>
-                    <button>
-                        Temas
-                    </button>
-                    <button>
-                        Amigos
-                    </button>
+                    <div className={styles.menu}>
+                        <button className={styles.primaryButton}>
+                            <FaPlay/>
+                            Jogar Agora
+                        </button>
+                        <button className={styles.secondaryButton}>
+                            <FaUsers/>
+                            Jogar Local
+                        </button>
+                        <button className={styles.secondaryButton}>
+                            <FaTrophy/>
+                            Ranking
+                        </button>
+                        <button className={styles.secondaryButton}>
+                            <FaPalette/>
+                            Temas
+                        </button>
+                        <button className={styles.secondaryButton}>
+                            <FaUserFriends/>
+                            Amigos
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <Footer/>
                 </div>
 
             </div>
-            <div>
-                <Tabuleiro/>
+            <div className={styles.container2}>
+                <PainelGame/>
             </div>
             
         </div>

@@ -1,13 +1,11 @@
-
-
 .navbar{
-    background-color: #363342;
+    background-color: var(--background);
     min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid var(--border);
 }
-
 
 .divButtons{
     display: flex;
@@ -21,20 +19,20 @@
     
     height: 50px;
     width: 50px;
-    font-size: 30px;
+    font-size: 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: transparent;
-    color: white;
+    background-color: var(--surface);
+    border: var(--border) solid 1px;
     transition: 0.3s;
     
 }
 
 .perfilButton:hover{
-    background-color: #623BFF;;
+    background-color: var(--surface-hover);
 }
 
 .logonav{

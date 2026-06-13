@@ -1,0 +1,66 @@
+.turnContainer {
+  width: 100%;
+
+  background-color: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: var(--shadow-sm);
+
+  margin-top: 20px;
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.playerInfo h3 {
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.playerInfo p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.playerIcon {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #7c5cff, #5a38ff);
+}
+
+.opponentIcon {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #0f1735, #000000);
+}
+
+.turnIndicator {
+  background-color: #f0ecff;
+
+  color: var(--primary);
+
+  font-weight: 600;
+
+  padding: 12px 24px;
+
+  border-radius: 999px;
+}
