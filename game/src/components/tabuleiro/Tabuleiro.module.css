@@ -59,3 +59,30 @@
 
   color: var(--text-secondary);
 }
+.casa,
+.casaPreta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.whiteKnight {
+  font-size: 42px;
+
+  color: white;
+
+  filter:
+    drop-shadow(0 2px 4px rgba(0, 0, 0, .35));
+}
+
+.blackKnight {
+  font-size: 42px;
+
+  color: #0F1735;
+}
+
+.bomba {
+  font-size: 28px;
+}

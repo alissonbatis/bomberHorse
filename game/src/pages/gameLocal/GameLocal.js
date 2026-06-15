@@ -8,12 +8,50 @@ import { TbReload } from "react-icons/tb";
 import { useState } from "react";
 
 function GameLocal() {
-  const [gameStarted, setGameStarted] = useState(false);
+  const [gameState, setGameState] = useState({
+  started: false,
+  turn: "white",
+
+  whiteKnight: null,
+  blackKnight: null,
+
+  bombs: [],
+  history: [],
+  winner: null,
+});
+
+  function iniciarPartida() {
+  setGameState({
+    started: true,
+    turn: "white",
+
+    whiteKnight: { x: 2, y: 1 },
+    blackKnight: { x: 7, y: 8 },
+
+    bombs: [],
+    history: [],
+    winner: null,
+  });
+}
+
+function reiniciarPartida(){
+    setGameState({
+  started: false,
+  turn: "white",
+
+  whiteKnight: null,
+  blackKnight: null,
+
+  bombs: [],
+  history: [],
+  winner: null,
+});
+}
 
   return (
     <div className={styles.divMain}>
       <div className={styles.container1}>
-        <PainelGame />
+        <PainelGame gameState={gameState} />
       </div>
       <div className={styles.container2}>
         <div className={styles.menuEscolha}>
@@ -24,13 +62,13 @@ function GameLocal() {
             <p className={styles.sectionTitle}>Partida Local</p>
           </span>
 
-          {!gameStarted ? (
+          {!gameState.started ? (
             <div className={styles.sectionEscolhaCor}>
               <p>Escolha sua cor</p>
               <EscolherCor />
               <button
                 className={styles.buttonPlay}
-                onClick={() => setGameStarted(true)}
+                onClick={iniciarPartida}
               >
                 {" "}
                 <FaPlay />
@@ -39,7 +77,10 @@ function GameLocal() {
             </div>
           ) : (
             <div>
-              <button className={styles.buttonReload} onClick={() => setGameStarted(false)} >
+              <button
+                className={styles.buttonReload}
+                onClick={reiniciarPartida}
+              >
                 {" "}
                 <TbReload size={30} />
                 REINICIAR PARTIDA

@@ -1,13 +1,29 @@
 import styles from "./Tabuleiro.module.css";
+import { GiHorseHead } from "react-icons/gi";
 
-function Tabuleiro() {
+function Tabuleiro({ gameState = {} }) {
   const casas = [];
 
   for (let y = 8; y >= 1; y--) {
     for (let x = 1; x <= 8; x++) {
-
-      // h1 branca
       const preta = (x + y) % 2 === 0;
+
+      const isWhiteKnight =
+        gameState.started &&
+        gameState.whiteKnight &&
+        gameState.whiteKnight.x === x &&
+        gameState.whiteKnight.y === y;
+
+      const isBlackKnight =
+        gameState.started &&
+        gameState.blackKnight &&
+        gameState.blackKnight.x === x &&
+        gameState.blackKnight.y === y;
+
+      const hasBomb =
+  gameState?.bombs?.some(
+    (bomb) => bomb.x === x && bomb.y === y
+  );
 
       casas.push(
         <div
@@ -15,7 +31,25 @@ function Tabuleiro() {
           className={preta ? styles.casaPreta : styles.casa}
           data-x={x}
           data-y={y}
-        />
+        >
+          {hasBomb && (
+            <span className={styles.bomba}>
+              💣
+            </span>
+          )}
+
+          {isWhiteKnight && (
+            <GiHorseHead
+              className={styles.whiteKnight}
+            />
+          )}
+
+          {isBlackKnight && (
+            <GiHorseHead
+              className={styles.blackKnight}
+            />
+          )}
+        </div>
       );
     }
   }

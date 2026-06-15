@@ -2,10 +2,10 @@ import Tabuleiro from "../tabuleiro/Tabuleiro";
 import styles from "./PainelGame.module.css";
 import "../../index.css";
 
-function PainelGame() {
+function PainelGame({gameState}) {
   return (
     <div>
-      <Tabuleiro />
+      <Tabuleiro gameState={gameState}/>
       <div className={styles.turnContainer}>
         <div className={styles.player}>
           <div className={styles.playerInfo}>
