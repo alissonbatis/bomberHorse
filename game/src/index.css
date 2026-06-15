@@ -6,44 +6,65 @@
 
 :root {
 
-  /* ===== BRAND ===== */
+  /* =========================
+     BRAND
+  ========================= */
 
   --primary: #5A38FF;
   --primary-hover: #744CFF;
 
-  /* ===== BACKGROUNDS ===== */
+  --primary-soft: #ECE9FF;
+  --primary-soft-hover: #DDD7FF;
+
+  /* =========================
+     BACKGROUNDS
+  ========================= */
 
   --background: #F8F8FA;
+
   --surface: #FFFFFF;
   --surface-hover: #F4F4F8;
 
-  /* ===== TEXT ===== */
+  /* =========================
+     TEXT
+  ========================= */
 
   --text: #0F1735;
+
   --text-secondary: #67708A;
+
   --text-muted: #9AA3B2;
 
-  /* ===== BORDERS ===== */
+  /* =========================
+     BORDERS
+  ========================= */
 
   --border: #E7E7EF;
 
-  /* ===== BOARD ===== */
+  /* =========================
+     BOARD
+  ========================= */
 
   --board-light: #FFFFFF;
-  --board-dark: #ECE9FF;
+  --board-dark: #d0c8ff;
 
-  /* ===== TEXT FOOTER ===== */
+  /* =========================
+     FOOTER
+  ========================= */
 
-  --list-footer: #2e2e2e86;
+  --list-footer: rgba(15, 23, 53, 0.55);
 
-
-  /* ===== STATES ===== */
+  /* =========================
+     STATES
+  ========================= */
 
   --success: #22C55E;
   --warning: #F59E0B;
   --danger: #EF4444;
 
-  /* ===== SHADOWS ===== */
+  /* =========================
+     SHADOWS
+  ========================= */
 
   --shadow-sm:
     0px 2px 8px rgba(0, 0, 0, 0.04);
@@ -52,17 +73,98 @@
     0px 6px 20px rgba(0, 0, 0, 0.08);
 
   --shadow-lg:
-    0px 10px 30px rgba(0, 0, 0, 0.12);
+    0px 10px 30px rgba(0, 0, 0, 0.3);
 
-  /* ===== RADIUS ===== */
+  /* =========================
+     RADIUS
+  ========================= */
 
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
 
-  /* ===== FONT ===== */
+  /* =========================
+     FONT
+  ========================= */
 
   --font-main: "Inter", sans-serif;
+}
+
+
+/* =========================
+   DARK THEME
+========================= */
+
+[data-theme="dark"] {
+
+  /* =========================
+     BRAND
+  ========================= */
+
+  --primary: #7B61FF;
+  --primary-hover: #927CFF;
+
+  --primary-soft: rgba(123, 97, 255, 0.12);
+  --primary-soft-hover: rgba(123, 97, 255, 0.18);
+
+  /* =========================
+     BACKGROUNDS
+  ========================= */
+
+  --background: #151624;
+
+  --surface: #1E2031;
+  --surface-hover: #27293D;
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  --text: #F4F5FF;
+
+  --text-secondary: #B3B9D1;
+
+  --text-muted: #7E86A3;
+
+  /* =========================
+     BORDERS
+  ========================= */
+
+  --border: #31344C;
+
+  /* =========================
+     BOARD
+  ========================= */
+
+  --board-light: #F4F4F6;
+  --board-dark: #373957;
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  --list-footer: rgba(255, 255, 255, 0.55);
+
+  /* =========================
+     STATES
+  ========================= */
+
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-sm:
+    0px 2px 8px rgba(0, 0, 0, 0.25);
+
+  --shadow-md:
+    0px 8px 24px rgba(0, 0, 0, 0.35);
+
+  --shadow-lg:
+    0px 16px 40px rgba(0, 0, 0, 0.45);
 }
 
 
@@ -93,11 +195,15 @@ body,
 ========================= */
 
 body {
-  background-color: var(--background);
+  background: var(--background);
 
   color: var(--text);
 
   font-family: var(--font-main);
+
+  transition:
+    background-color .25s ease,
+    color .25s ease;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -119,15 +225,19 @@ ol {
 }
 
 button {
-  font-family: inherit;
   border: none;
+
   cursor: pointer;
+
+  font-family: inherit;
 }
 
 img {
   display: block;
   max-width: 100%;
 }
+
+
 /* =========================
    TÍTULOS
 ========================= */
@@ -149,4 +259,53 @@ h3 {
 
 p {
   color: var(--text-secondary);
+}
+
+
+/* =========================
+   COMPONENTES ÚTEIS
+========================= */
+
+.card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+.primaryButton {
+  background: var(--primary);
+
+  color: white;
+
+  border-radius: var(--radius-md);
+
+  transition: .2s;
+}
+
+.primaryButton:hover {
+  background: var(--primary-hover);
+}
+
+.secondaryButton {
+  background: var(--primary-soft);
+
+  color: var(--primary);
+
+  border-radius: var(--radius-md);
+
+  transition: .2s;
+}
+
+.secondaryButton:hover {
+  background: var(--primary-soft-hover);
+}
+
+.selected {
+  background: var(--primary-soft);
+
+  border: 2px solid var(--primary);
 }

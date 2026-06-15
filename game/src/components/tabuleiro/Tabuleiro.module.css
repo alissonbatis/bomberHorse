@@ -1,28 +1,61 @@
-.tabuleiro{
-    position: relative;
-    overflow: hidden;
-    background-color: black;
-    width: 600px;
-    height: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 5px;
+.wrapper {
+  background: var(--surface);
+
+  padding: 24px;
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-md);
 }
 
-.casa{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12.5%;
-    width: 12.5%;
-    background-color: white;
-    
+.boardContainer {
+  display: flex;
+  gap: 12px;
 }
-.casaPreta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12.5%;
-    width: 12.5%;
-    background-color: rgb(0, 0, 0);
+
+.tabuleiro {
+  display: grid;
+
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(8, 80px);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.casa {
+  background: var(--board-light);
+}
+
+.casaPreta {
+  background: var(--board-dark);
+}
+
+.numeros {
+  display: grid;
+
+  grid-template-rows: repeat(8, 80px);
+
+  align-items: center;
+
+  font-weight: 600;
+
+  color: var(--text-secondary);
+}
+
+.letras {
+  display: grid;
+
+  grid-template-columns: repeat(8, 80px);
+
+  margin-top: 10px;
+
+  text-align: center;
+
+  font-weight: 600;
+
+  color: var(--text-secondary);
 }

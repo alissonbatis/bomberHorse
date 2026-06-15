@@ -7,6 +7,7 @@ import Game from "./pages/Game";
 import Desenvolvedores from "./pages/Desenvolvedores";
 import Sobre from "./pages/Sobre";
 import NavBar from "./components/navBar/NavBar";
+import GameLocal from "./pages/gameLocal/GameLocal";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/game" element={<Game/>} />
             <Route path="/sobre" element={<Sobre/>} />
             <Route path="/devs" element={<Desenvolvedores/>} />
+            <Route path="/gamelocal" element={<GameLocal/>} />
           </Routes>
         </main>
       </div>

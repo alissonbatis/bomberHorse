@@ -10,7 +10,7 @@
 .divButtons{
     display: flex;
     justify-content: space-between;
-    width: 120px;
+    width: 170px;
     margin-right: 20px;
 }
 .perfilButton{

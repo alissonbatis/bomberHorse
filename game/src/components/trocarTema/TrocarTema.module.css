@@ -1,0 +1,22 @@
+.themeButton{
+    border: none;
+    border-radius: 50%;
+    
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--surface);
+    border: var(--border) solid 1px;
+    transition: 0.3s;
+    
+}
+
+.themeButton :hover{
+    background-color: var(--surface-hover);
+}
+

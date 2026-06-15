@@ -9,8 +9,11 @@ import {
   Users
 } from "lucide-react";
 import PainelGame from "../components/painelGame/PainelGame";
+import { useNavigate } from "react-router-dom";
+
 
 function Home (){
+    const navigate = useNavigate();
     return(
         <div className= {styles.blocoHome}>
             <div className= {styles.container}>
@@ -25,7 +28,7 @@ function Home (){
                             </span>
                             Jogar Agora
                         </button>
-                        <button className={styles.secondaryButton}>
+                        <button className={styles.secondaryButton} onClick={()=> navigate("/gamelocal")}>
                             <span className={styles.icRx}><User/></span>
                             Jogar Local
                         </button>

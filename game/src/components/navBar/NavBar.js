@@ -5,6 +5,8 @@ import {
   User
 } from "lucide-react";
 
+import TrocarTema from '../trocarTema/TrocarTema'
+
 function NavBar (){
     return(
         <div className= {styles.navbar}>
@@ -18,6 +20,9 @@ function NavBar (){
                 <button className={styles.perfilButton}>
                     <Settings />
                 </button>
+                <div>
+                    <TrocarTema/>
+                </div>
             </div>
             
         </div>

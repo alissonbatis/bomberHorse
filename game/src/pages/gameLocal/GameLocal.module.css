@@ -1,0 +1,155 @@
+.divMain{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--text);
+
+
+}
+
+.container1{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+}
+
+.menuEscolha{
+    background-color: aqua;
+    background-color: var(--surface);
+    height: 80%;
+    width: 100%;
+    padding: 20px;
+    border: 1px var(--border) solid;
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+    gap: 20px;
+    border-radius: var(--radius-md);
+
+}
+.sectionEscolhaCor{
+    width: 100%;
+}
+
+.menuEscolha p {
+    color: var(--text-secondary);
+}
+.menuEscolha h2 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.buttonPlay {
+  background: linear-gradient(135deg, var(--primary), #7048ff);
+
+  color: white;
+
+  padding: 16px 24px;
+
+  width: 90%;
+
+  border-radius: var(--radius-md);
+
+  font-weight: 600;
+
+  font-size: 20px;
+
+  text-align: center;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  justify-content: center;
+
+  transition: all 0.25s ease;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.buttonPlay:hover {
+  transform: translateY(-2px);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+
+.title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: var(--text-secondary);
+}
+
+.sectionTitle::before,
+.sectionTitle::after {
+  content: "";
+
+  flex: 1;
+
+  height: 2px;
+
+  background: var(--border);
+}
+
+
+.buttonReload {
+  background: var(--surface);
+
+  color: var(--primary);
+
+  padding: 16px 24px;
+
+  width: 90%;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--primary);
+
+  font-weight: 600;
+
+  font-size: 20px;
+
+  text-align: center;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  justify-content: center;
+
+  transition: all 0.25s ease;
+}
+
+.buttonReload:hover {
+  
+  background-color: #9578ff59;
+  border-color: rgba(139, 92, 246, 0.4);
+}

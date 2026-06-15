@@ -1,0 +1,99 @@
+
+.colorSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  height: 72px;
+
+  padding: 0 1.5rem;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.option:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.selected {
+  background: rgba(139, 92, 246, 0.08);
+
+  border: 2px solid #8b5cf6;
+
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.3),
+    0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.radio {
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  border: 2px solid #8b5cf6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.radioDot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #8b5cf6;
+}
+
+.pieceWhite {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 2px solid #e5e7eb;
+
+  flex-shrink: 0;
+}
+
+.pieceBlack {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  background: #000;
+
+  border: 2px solid #111827;
+
+  flex-shrink: 0;
+}
+
+.option span {
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  color: var(--text);
+}
